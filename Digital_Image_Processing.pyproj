@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>98f0fc86-0d9c-4b6f-addb-39175c7bcd94</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>transforms.py</StartupFile>
+    <StartupFile>topGUI.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Digital_Image_Processing.py" />
+    <Compile Include="Exp1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="topGUI.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="transforms.py" />
   </ItemGroup>
   <ItemGroup>

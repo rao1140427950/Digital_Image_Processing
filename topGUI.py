@@ -2,6 +2,7 @@ from tkinter import *
 import cv2 as cv
 from PIL import ImageTk, Image
 from Exp1 import Exp1
+from Exp2 import Exp2
 
 IMAGE_PATH = 'lena.bmp'
 
@@ -12,7 +13,7 @@ def openWindow2():
     global image
     global root
 
-    exp1 = Exp1(image, root)
+    exp2 = Exp2(image, root)
     root.withdraw()
 
 def openWindow1():

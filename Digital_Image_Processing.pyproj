@@ -26,6 +26,9 @@
     <Compile Include="Exp1.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Exp2.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="topGUI.py">
       <SubType>Code</SubType>
     </Compile>

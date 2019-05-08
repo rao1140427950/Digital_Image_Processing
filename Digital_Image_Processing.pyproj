@@ -22,11 +22,17 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="blur_thresh.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Digital_Image_Processing.py" />
     <Compile Include="Exp1.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Exp2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exp3.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="topGUI.py">

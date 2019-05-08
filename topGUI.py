@@ -3,11 +3,20 @@ import cv2 as cv
 from PIL import ImageTk, Image
 from Exp1 import Exp1
 from Exp2 import Exp2
+from Exp3 import Exp3
 
 IMAGE_PATH = 'lena.bmp'
+BOAT_PATH = 'boat.png'
 
 root = Tk()
 image = None
+
+def openWindow3():
+    global image
+    global root
+
+    exp2 = Exp3(cv.imread(BOAT_PATH), root)
+    root.withdraw()
 
 def openWindow2():
     global image
@@ -33,7 +42,7 @@ imageLabel.grid(row = 2, column = 1, rowspan = 5, columnspan = 5, padx = 5, pady
 
 button1 = Button(root, text = '实验一', width = 25, height = 3, command = openWindow1)
 button2 = Button(root, text = '实验二', width = 25, height = 3, command = openWindow2)
-button3 = Button(root, text = '实验三', width = 25, height = 3)
+button3 = Button(root, text = '实验三', width = 25, height = 3, command = openWindow3)
 button4 = Button(root, text = '实验四', width = 25, height = 3)
 button5 = Button(root, text = '实验五', width = 25, height = 3)
 button1.grid(row = 2, column = 7, padx = 10)

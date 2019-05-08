@@ -25,11 +25,13 @@ class Exp1(object):
     __N = 0
     __index = ([], [])
     __PSNR = 0
+    __use_cv = True
 
-    def __init__(self, img, rootWindow):
+    def __init__(self, img, rootWindow, use_cv = True):
         self.__root = Toplevel()
         self.__root.title('实验一')
         self.__img = img
+        self.__use_cv = use_cv
         self.__N = img.shape[0]*img.shape[1]
         self.__parent = rootWindow
         self.__root.protocol('WM_DELETE_WINDOW', self.onClose)
@@ -126,7 +128,7 @@ class Exp1(object):
             self.__dct_active = False
             img = np.copy(self.__img_dct)
             img[self.__index] = 0
-            img_restore = trans.dct_transform(img, True)
+            img_restore = trans.dct_transform(img, True, self.__use_cv)
             self.__imgDisplay = img_restore
             self.__PSNR = self.calcPSNR(img_restore, self.__img)
             self.updatePSNR()
@@ -135,7 +137,7 @@ class Exp1(object):
             #self.__scale.set(100)
             #self.__index = ([], [])
             self.__dct_active = True
-            self.__img_dct = trans.dct_transform(self.__img)
+            self.__img_dct = trans.dct_transform(self.__img, False, self.__use_cv)
             self.__imgDisplay = trans.image_for_display(self.__img_dct)
             self.__imgDisplay_sorted = np.reshape(np.copy(self.__imgDisplay), (1, self.__N))
             self.__imgDisplay_sorted.sort()
@@ -149,7 +151,7 @@ class Exp1(object):
             self.__dht_active = False
             img = np.copy(self.__img_dht)
             img[self.__index] = 0
-            img_restore = trans.dht_transform(img, True)
+            img_restore = trans.dht_transform(img, True, self.__use_cv)
             self.__imgDisplay = img_restore
             self.__PSNR = self.calcPSNR(img_restore, self.__img)
             self.updatePSNR(self.__PSNR*0.85)
@@ -158,7 +160,7 @@ class Exp1(object):
             #self.__scale.set(100)
             #self.__index = ([], [])
             self.__dht_active = True
-            self.__img_dht = trans.dht_transform(self.__img)
+            self.__img_dht = trans.dht_transform(self.__img, False, self.__use_cv)
             self.__imgDisplay = trans.image_for_display(self.__img_dht)
             self.__imgDisplay_sorted = np.reshape(np.copy(self.__imgDisplay), (1, self.__N))
             self.__imgDisplay_sorted.sort()

@@ -23,9 +23,11 @@ class Exp3(object):
     __dilate_R = 1
     __erode_R = 1
     __isBinary = False
+    __use_cv = True
     
-    def __init__(self, img, rootWindow):
+    def __init__(self, img, rootWindow, use_cv = True):
         self.__root = Toplevel()
+        self.__use_cv = use_cv
         self.__root.title('实验三')
         if (len(np.shape(img)) > 2):
             img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -98,7 +100,7 @@ class Exp3(object):
             self.__scale2.set(self.__dilate_R)
         if (self.__isBinary):
             kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (int(self.__dilate_R), int(self.__dilate_R)))
-            img = dilate(self.__imgBin, kernel, False)
+            img = dilate(self.__imgBin, kernel, self.__use_cv)
             self.updateImage(img)
 
     def scale3Change(self, text):
@@ -109,7 +111,7 @@ class Exp3(object):
         if (self.__isBinary):
             kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (int(self.__erode_R), int(self.__erode_R)))
             #print(kernel)
-            img = erode(self.__imgBin, kernel)
+            img = erode(self.__imgBin, kernel, self.__use_cv)
             self.updateImage(img)
 
     def button1Click(self):
@@ -118,7 +120,7 @@ class Exp3(object):
             self.updateImage(self.__img)
         else:
             self.__isBinary = True
-            img = thresh_otsu(self.__imgBlur)
+            img = thresh_otsu(self.__imgBlur, self.__use_cv)
             self.__imgBin = img
             self.updateImage(img)
 

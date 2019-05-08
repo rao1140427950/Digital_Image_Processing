@@ -35,6 +35,12 @@
     <Compile Include="Exp3.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Exp4.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="func_hough.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="topGUI.py">
       <SubType>Code</SubType>
     </Compile>

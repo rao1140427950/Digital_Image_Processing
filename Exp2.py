@@ -31,13 +31,15 @@ class Exp2(object):
     __psnrLabel = None
     __sigma = 0
     __psnr = 0
+    __use_cv = True
     __real = []
     __imag = []
      
-    def __init__(self, img, rootWindow):
+    def __init__(self, img, rootWindow, use_cv = True):
         self.__root = Toplevel()
         self.__root.title('实验二')
         self.__img = img
+        self.__use_cv = use_cv
         self.__N = img.shape[0]*img.shape[1]
         self.__parent = rootWindow
         self.__root.protocol('WM_DELETE_WINDOW', self.onClose)

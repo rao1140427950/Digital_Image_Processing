@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>Digital_Image_Processing</Name>
     <RootNamespace>Digital_Image_Processing</RootNamespace>
-    <InterpreterId>Global|ContinuumAnalytics|Anaconda37-64</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|tensorflow_gpu_py36</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,7 +38,16 @@
     <Compile Include="Exp4.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Exp5.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="func_hough.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mnist_train.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="network.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="topGUI.py">
@@ -47,6 +56,7 @@
     <Compile Include="transforms.py" />
   </ItemGroup>
   <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|tensorflow_gpu_py36" />
     <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda37-64" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

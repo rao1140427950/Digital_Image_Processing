@@ -2,7 +2,7 @@ import numpy as np
 import cv2 as cv
 from tkinter import *
 from PIL import ImageTk, Image
-from func_hough import *
+#from func_hough import *
 
 class Exp4(object):
     

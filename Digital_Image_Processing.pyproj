@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>Digital_Image_Processing</Name>
     <RootNamespace>Digital_Image_Processing</RootNamespace>
-    <InterpreterId>CondaEnv|CondaEnv|tensorflow_gpu_py36</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|tensorflow_cpu_py36</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,8 +56,12 @@
     <Compile Include="transforms.py" />
   </ItemGroup>
   <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|tensorflow_cpu_py36" />
     <InterpreterReference Include="CondaEnv|CondaEnv|tensorflow_gpu_py36" />
     <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda37-64" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

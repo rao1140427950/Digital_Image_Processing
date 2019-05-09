@@ -26,7 +26,7 @@ class Exp5(object):
 
     def __init__(self, img, rootWindow, use_cv = True):
         self.__root = Toplevel()
-        self.__root.title('实验二')
+        self.__root.title('实验五')
         self.__imgTrain = img
         self.__parent = rootWindow
         self.__root.protocol('WM_DELETE_WINDOW', self.onClose)
